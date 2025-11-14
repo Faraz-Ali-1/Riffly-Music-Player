@@ -35,5 +35,3 @@ JavaScript: Core logic for playlist management, audio control, and button functi
 **Contribution**
 
 If you have suggestions for improvements, such as adding volume controls or a repeat function, feel free to fork the repository and submit a pull request!
-
-This project is open-source and available under the [Choose a License, e.g., MIT License].
