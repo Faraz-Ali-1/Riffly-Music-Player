@@ -1,37 +1,66 @@
-# Riffly - Music Player
+# Riffly Music Player
 
-**Minimalist Playlist Player**
+Riffly is a sleek, fully functional web-based music player. It allows users to manage a dynamic playlist, control playback with precision, and experience a customized listening session through shuffle and delete functionalities.
 
-A sleek and simple web-based music player designed for handling a single curated playlist. This application focuses on essential controls, offering a clean user interface for immediate music enjoyment.
+---
 
-**Features**
+![img](https://github.com/Faraz-Ali-1/Riffly-Music-Player/blob/8ae19ea00c6514df03b75646e8be94f71fea41e9/screenshots/riffly%201.jpg)
 
-This music player provides all the core controls you need for a focused listening experience:
+---
 
-Single Playlist: Manages a defined list of tracks.
+## Live Demo
 
-**Essential Playback Controls:**
+https://faraz-ali-1.github.io/Riffly-Music-Player/
 
-▶️ Play or Pause: Start or resume playback.
+---
 
-⏭️ Next: Skip to the next song in the playlist.
+## Technical Features
 
-⏮️ Previous: Go back to the beginning of the current song, or to the previous song if near the start.
+### Comprehensive Playback Control
+Implemented core audio features including Play, Pause, Next, and Previous. The player tracks the `currentTime` of the `Audio` object, ensuring that if a song is paused and resumed, it picks up exactly where it left off.
 
-Shuffle Mode: Randomly reorders the playlist for varied listening.
+### Advanced Array Logic (Shuffle & Sort)
+Developed a shuffle algorithm using `Math.random()` to reorder the playlist. The app also features an initial sorting logic that organizes the library alphabetically by song title upon loading or resetting.
 
-Responsive Design: Works well on both desktop and mobile devices.
+### Dynamic Playlist Management
+Users can remove songs from their current session. The logic handles edge cases—such as stopping the player if the currently playing song is deleted—and offers a "Reset Playlist" option once the library is empty.
 
-**Technologies Used**
+### Data-Driven UI Rendering
+Utilized a central `userData` object to keep the UI in sync with the state. The playlist is rendered dynamically using the `.map()` method, and the "Currently Playing" highlight is managed through real-time attribute updates.
 
-This project is built using fundamental web technologies:
+---
 
-HTML5: Structure of the application.
+## Technical Challenges
 
-CSS3: Used for styling, ensuring a modern, responsive, and aesthetically pleasing layout.
+### Handling Audio State & Transitions
+A major challenge was managing the transition when a song ends. I implemented an event listener for the `ended` state that automatically checks if a next song exists in the array and triggers the playback, creating a seamless automated listening experience.
 
-JavaScript: Core logic for playlist management, audio control, and button functionality.
+### Maintaining Accessibility
+I prioritized accessibility by implementing dynamic `aria-label` updates. Whenever the song changes, the "Play" button's accessible text updates to reflect the specific song title, ensuring the app is usable for people using screen readers.
 
-**Contribution**
+---
 
-If you have suggestions for improvements, such as adding volume controls or a repeat function, feel free to fork the repository and submit a pull request!
+![img](https://github.com/Faraz-Ali-1/Riffly-Music-Player/blob/8ae19ea00c6514df03b75646e8be94f71fea41e9/screenshots/riffly%202.jpg)
+
+---
+
+## Tech Stack
+
+* **Logic:** Vanilla JavaScript (ES6+)
+* **Media:** HTML5 Audio API
+* **State Management:** Local Object-based state (userData)
+* **Styling:** CSS3 (Modern Audio Player UI)
+
+---
+
+## Installation
+
+1. Clone the repository.
+2. Open `index.html` in your browser.
+3. Use the control bar at the bottom to play, shuffle, or skip tracks.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
